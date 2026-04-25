@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 138 20% 18%;
+
+    --card: 38 36% 98%;
+    --card-foreground: 138 20% 18%;
+
+    --popover: 38 36% 98%;
+    --popover-foreground: 138 20% 18%;
+
+    --primary: 132 31% 29%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 25% 91%;
+    --secondary-foreground: 138 20% 22%;
+
+    --muted: 38 24% 92%;
+    --muted-foreground: 110 8% 38%;
+
+    --accent: 92 21% 87%;
+    --accent-foreground: 132 31% 24%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 132 31% 29%;
+
+    --radius: 0.625rem;
+    --radius-sm: calc(0.625rem - 4px);
+    --radius-lg: calc(0.625rem + 4px);
+    --radius-full: 9999px;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05), 0 1px 3px 0 rgb(0 0 0 / 0.08);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+    --shadow-lg: 0 10px 20px -3px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.08);
+
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 350ms;
+
+    --chart-1: 132 31% 29%;
+    --chart-2: 87 25% 42%;
+    --chart-3: 28 62% 56%;
+    --chart-4: 38 36% 45%;
+    --chart-5: 18 50% 38%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 0 0% 98%;
+    --card: 222 47% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 30% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 222 30% 15%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 142 71% 15%;
+    --accent-foreground: 142 71% 85%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 142 71% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "ss01" 1;
+    background-image:
+      radial-gradient(circle at top left, rgba(128, 145, 103, 0.12), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(244, 239, 227, 0.85));
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Suppress hydration error overlays */
+[data-hydration-error] { display: none !important; }
+
+/* Subtle patterns */
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(34, 49, 38, 0.8) 0%, rgba(86, 117, 72, 0.55) 100%);
+}
+.dark-panel {
+  background: linear-gradient(180deg, #223126 0%, #324430 100%);
+}

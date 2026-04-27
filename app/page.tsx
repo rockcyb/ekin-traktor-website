@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -15,6 +16,7 @@ import { WhatsappButtons } from '@/components/site/whatsapp-buttons'
 import { FadeIn, Stagger, StaggerItem } from '@/components/ui/animate'
 import { MAPS_LINK, WORKING_HOURS } from '@/lib/contact'
 import { ABOUT_IMAGE, EQUIPMENT_IMAGE, HERO_IMAGE, TRACTORS_IMAGE } from '@/lib/images'
+import { createPageMetadata } from '@/lib/seo'
 
 const ADVANTAGES = [
   {
@@ -38,7 +40,7 @@ const CATEGORY_SECTIONS = [
   {
     href: '/traktorler',
     image: TRACTORS_IMAGE,
-    imageAlt: 'Galeride sıralanmış ikinci el traktörler',
+    imageAlt: 'Ekin Traktör Tekirdağ galerisinde sıralanmış düşük saatli ikinci el traktörler',
     icon: Tractor,
     eyebrow: 'Traktörler',
     title: 'Yüksek model, düşük saatli traktörler',
@@ -48,7 +50,7 @@ const CATEGORY_SECTIONS = [
   {
     href: '/tarim-ekipmanlari',
     image: EQUIPMENT_IMAGE,
-    imageAlt: 'Tarlada kullanılan tarım ekipmanları',
+    imageAlt: 'Ekin Traktör Tekirdağ stokunda bulunan tarım ekipmanları ve tarla makineleri',
     icon: Wrench,
     eyebrow: 'Tarım Ekipmanları',
     title: 'İşe uygun ekipmanı birlikte seçelim',
@@ -64,6 +66,19 @@ const TRUST_POINTS = [
   'Tekirdağ’da kolay ulaşılabilir konumdayız',
 ]
 
+export const metadata: Metadata = createPageMetadata({
+  title: 'Ekin Traktör | 2. El Traktör ve Tarım Ekipmanları Tekirdağ',
+  description:
+    'Ekin Traktör Motorlu Araçlar Tekirdağ Süleymanpaşa’da krediye uygun traktör, düşük saatli traktör, yüksek model traktör ve tarım ekipmanları sunar.',
+  path: '/',
+  keywords: [
+    'Ekin Traktör Tekirdağ',
+    'Ekin Traktör Motorlu Araçlar',
+    '2. el traktör Tekirdağ',
+    'tarım ekipmanları Tekirdağ',
+  ],
+})
+
 export default function Home() {
   const heroMsg =
     'Merhaba, Ekin Traktör web sitesinden ulaşıyorum. Krediye uygun, düşük saatli ve yüksek model traktörler hakkında bilgi almak istiyorum.'
@@ -74,7 +89,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE}
-            alt="Tarlada ilerleyen modern bir traktör"
+            alt="Ekin Traktör için tarlada ilerleyen yüksek model ikinci el traktör görseli"
             fill
             sizes="100vw"
             priority
@@ -236,7 +251,7 @@ export default function Home() {
                 <div className="relative min-h-[240px] border-b border-[#ece3d1] bg-[#e8e1d3] lg:min-h-[100%] lg:border-b-0 lg:border-r">
                   <Image
                     src={ABOUT_IMAGE}
-                    alt="Ekin Traktör galerisinde sergilenen traktörler ve tarım makineleri"
+                    alt="Ekin Traktör Motorlu Araçlar Tekirdağ galerisinde sergilenen traktörler ve tarım makineleri"
                     fill
                     sizes="(min-width: 1024px) 42vw, 100vw"
                     className="object-cover"

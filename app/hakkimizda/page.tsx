@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, CreditCard, MapPin, ShieldCheck, Tractor } from 'lucide-react'
@@ -5,12 +6,15 @@ import { PageHero } from '@/components/site/page-hero'
 import { WhatsappButtons } from '@/components/site/whatsapp-buttons'
 import { FadeIn, Stagger, StaggerItem } from '@/components/ui/animate'
 import { ABOUT_IMAGE } from '@/lib/images'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Hakkımızda | Ekin Traktör Motorlu Araçlar',
+export const metadata: Metadata = createPageMetadata({
+  title: 'Hakkımızda | Ekin Traktör Motorlu Araçlar Tekirdağ',
   description:
-    'Tekirdağ Süleymanpaşa merkezli Ekin Traktör. Krediye uygun, düşük saatli traktörler ve tarım ekipmanlarında güvenilir satış noktası.',
-}
+    'Ekin Traktör Motorlu Araçlar Tekirdağ Süleymanpaşa’da krediye uygun traktör, düşük saatli traktör ve tarım ekipmanları alanında güvenilir yerel galeri olarak hizmet verir.',
+  path: '/hakkimizda',
+  keywords: ['Ekin Traktör', 'Ekin Traktör Motorlu Araçlar', 'Tekirdağ traktör galerisi'],
+})
 
 const HIGHLIGHTS = [
   {
@@ -47,7 +51,7 @@ export default function HakkimizdaPage() {
               <div className="relative min-h-[340px] overflow-hidden rounded-[30px] border border-[#e4dac7] bg-[#e8e1d3] shadow-[0_18px_42px_rgba(42,53,34,0.08)]">
                 <Image
                   src={ABOUT_IMAGE}
-                  alt="Ekin Traktör galerisinde traktör ve ekipman alanı"
+                  alt="Ekin Traktör Motorlu Araçlar Tekirdağ galerisinde traktör ve tarım ekipmanı alanı"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
                   className="object-cover"
@@ -82,6 +86,26 @@ export default function HakkimizdaPage() {
                     variant="outline-light"
                     message="Merhaba, Ekin Traktör hakkında bilgi almak istiyorum."
                   />
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2 text-sm">
+                  <Link
+                    href="/traktorler"
+                    className="rounded-full border border-[#ddd4c0] bg-[#fbf8f1] px-3 py-1.5 text-[#42503c] transition hover:border-[#c8bea8] hover:text-[#203024]"
+                  >
+                    Traktör ilanlarını inceleyin
+                  </Link>
+                  <Link
+                    href="/tarim-ekipmanlari"
+                    className="rounded-full border border-[#ddd4c0] bg-[#fbf8f1] px-3 py-1.5 text-[#42503c] transition hover:border-[#c8bea8] hover:text-[#203024]"
+                  >
+                    Tarım ekipmanlarına bakın
+                  </Link>
+                  <Link
+                    href="/iletisim"
+                    className="rounded-full border border-[#ddd4c0] bg-[#fbf8f1] px-3 py-1.5 text-[#42503c] transition hover:border-[#c8bea8] hover:text-[#203024]"
+                  >
+                    İletişime geçin
+                  </Link>
                 </div>
               </div>
             </FadeIn>

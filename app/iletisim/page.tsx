@@ -1,15 +1,20 @@
+import type { Metadata } from 'next'
 import { Phone, Clock, MapPin, ArrowRight } from 'lucide-react'
 import { PageHero } from '@/components/site/page-hero'
 import { ContactForm } from '@/components/site/contact-form'
 import { WhatsappIcon } from '@/components/site/whatsapp-icon'
 import { FadeIn } from '@/components/ui/animate'
 import { CONTACTS, ADDRESS, WORKING_HOURS, MAPS_EMBED_URL, MAPS_LINK } from '@/lib/contact'
+import Link from 'next/link'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'İletişim | Ekin Traktör Motorlu Araçlar',
+export const metadata: Metadata = createPageMetadata({
+  title: 'İletişim | Ekin Traktör Motorlu Araçlar Tekirdağ',
   description:
-    'Ekin Traktör Motorlu Araçlar — Tekirdağ Süleymanpaşa. WhatsApp, telefon, adres ve iletişim formu. Biz size en kısa sürede dönüş yaparız.',
-}
+    'Ekin Traktör Motorlu Araçlar iletişim bilgileri, WhatsApp numaraları, adres, harita ve iletişim formu. Tekirdağ Süleymanpaşa’daki galerimize kolayca ulaşın.',
+  path: '/iletisim',
+  keywords: ['Ekin Traktör iletişim', 'Tekirdağ traktör iletişim', 'Süleymanpaşa traktör galerisi adres'],
+})
 
 export default function IletisimPage() {
   return (
@@ -134,6 +139,26 @@ export default function IletisimPage() {
               <p className="mt-3 text-gray-600 leading-relaxed">
                 Formu doldurduğunuzda mesajınız WhatsApp üzerinden seçtiğiniz satış temsilcimize iletilecektir. Bu sayede size daha hızlı dönüş yapabiliriz.
               </p>
+              <div className="mt-5 flex flex-wrap gap-2 text-sm">
+                <Link
+                  href="/traktorler"
+                  className="rounded-full border border-[#d9dfd0] bg-white px-3 py-1.5 font-medium text-[#42503c] transition hover:border-emerald-300 hover:text-[#203024]"
+                >
+                  Traktör ilanları
+                </Link>
+                <Link
+                  href="/tarim-ekipmanlari"
+                  className="rounded-full border border-[#d9dfd0] bg-white px-3 py-1.5 font-medium text-[#42503c] transition hover:border-emerald-300 hover:text-[#203024]"
+                >
+                  Tarım ekipmanları
+                </Link>
+                <Link
+                  href="/hakkimizda"
+                  className="rounded-full border border-[#d9dfd0] bg-white px-3 py-1.5 font-medium text-[#42503c] transition hover:border-emerald-300 hover:text-[#203024]"
+                >
+                  Hakkımızda
+                </Link>
+              </div>
               <ul className="mt-6 space-y-2 text-sm text-gray-700">
                 <li>• Stok, model ve saat bilgisi sorgulama</li>
                 <li>• Kredi ve takas seçenekleri</li>

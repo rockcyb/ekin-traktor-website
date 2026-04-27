@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight, MapPin } from 'lucide-react'
@@ -5,12 +6,15 @@ import { PageHero } from '@/components/site/page-hero'
 import { WhatsappButtons } from '@/components/site/whatsapp-buttons'
 import { FadeIn } from '@/components/ui/animate'
 import { EQUIPMENT_LISTINGS } from '@/lib/listings'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Tarım Ekipmanları | Ekin Traktör Motorlu Araçlar',
+export const metadata: Metadata = createPageMetadata({
+  title: 'Tarım Ekipmanları Tekirdağ | Gübre Serpme ve Toprak İşleme Ekipmanları',
   description:
-    'Gübre serpme makinası, pulluk, römork ve daha birçok tarım ekipmanı. Güncel stok için WhatsApp üzerinden iletişime geçin.',
-}
+    'Ekin Traktör Tekirdağ stokundaki gübre serpme makinası, toprak işleme ekipmanları ve diğer tarım makinelerini inceleyin. Güncel fiyat bilgisi için bize yazın.',
+  path: '/tarim-ekipmanlari',
+  keywords: ['tarım ekipmanları Tekirdağ', 'gübre serpme makinası Tekirdağ', 'toprak işleme ekipmanları'],
+})
 
 export default function TarimEkipmanlariPage() {
   const whatsappMsg =
@@ -36,6 +40,26 @@ export default function TarimEkipmanlariPage() {
                 <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[#203024] sm:text-4xl">
                   Hazırdaki ekipmanlarımız
                 </h2>
+                <div className="mt-4 flex flex-wrap gap-2 text-sm">
+                  <Link
+                    href="/traktorler"
+                    className="rounded-full border border-[#ddd4c0] bg-white px-3 py-1.5 text-[#42503c] transition hover:border-[#c8bea8] hover:text-[#203024]"
+                  >
+                    Traktör ilanlarına bak
+                  </Link>
+                  <Link
+                    href="/iletisim"
+                    className="rounded-full border border-[#ddd4c0] bg-white px-3 py-1.5 text-[#42503c] transition hover:border-[#c8bea8] hover:text-[#203024]"
+                  >
+                    İletişime geç
+                  </Link>
+                  <Link
+                    href="/hakkimizda"
+                    className="rounded-full border border-[#ddd4c0] bg-white px-3 py-1.5 text-[#42503c] transition hover:border-[#c8bea8] hover:text-[#203024]"
+                  >
+                    Ekin Traktör hakkında
+                  </Link>
+                </div>
               </div>
             </FadeIn>
             <FadeIn delay={0.08}>
@@ -53,7 +77,7 @@ export default function TarimEkipmanlariPage() {
                     <div className="relative min-h-[320px] overflow-hidden rounded-[24px] bg-[#f3ecdf]">
                       <Image
                         src={listing.image}
-                        alt={listing.title}
+                        alt={`${listing.brand} ${listing.model} ${listing.category.toLowerCase()} ekipmanı - Ekin Traktör Tekirdağ`}
                         fill
                         sizes="(min-width: 640px) 60vw, 100vw"
                         className="object-cover"
@@ -68,7 +92,7 @@ export default function TarimEkipmanlariPage() {
                         >
                           <Image
                             src={image}
-                            alt={`${listing.title} görüntü ${imageIndex + 2}`}
+                            alt={`${listing.title} ekipman fotoğrafı ${imageIndex + 2} - Ekin Traktör`}
                             fill
                             sizes="(min-width: 640px) 20vw, 50vw"
                             className="object-cover"
@@ -134,6 +158,17 @@ export default function TarimEkipmanlariPage() {
               </p>
               <div className="mt-6 flex justify-center">
                 <WhatsappButtons message={whatsappMsg} />
+              </div>
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm text-[#5b6554]">
+                <Link href="/traktorler" className="font-semibold text-[#3f5d33] hover:text-[#304829]">
+                  Traktör ilanları
+                </Link>
+                <Link href="/hakkimizda" className="font-semibold text-[#3f5d33] hover:text-[#304829]">
+                  Hakkımızda
+                </Link>
+                <Link href="/iletisim" className="font-semibold text-[#3f5d33] hover:text-[#304829]">
+                  İletişim
+                </Link>
               </div>
             </div>
           </FadeIn>

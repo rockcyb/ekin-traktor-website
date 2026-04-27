@@ -7,6 +7,7 @@ import { ChunkLoadErrorHandler } from '@/components/chunk-load-error-handler'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
 import { FloatingWhatsApp } from '@/components/site/floating-whatsapp'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-sans' })
 const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-display' })
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Toaster position="top-center" richColors />
           <ChunkLoadErrorHandler />
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   )

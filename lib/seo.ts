@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ADDRESS, CONTACTS, MAPS_LINK, MAPS_DESTINATION, WORKING_HOURS } from '@/lib/contact'
+import { ADDRESS, CONTACTS, MAPS_LINK, MAPS_DESTINATION } from '@/lib/contact'
 
 export const SITE_URL = 'https://ekintraktor.tr'
 export const SITE_NAME = 'Ekin Traktör Motorlu Araçlar'
@@ -69,8 +69,10 @@ export const localBusinessJsonLd = {
   logo: `${SITE_URL}/logo.jpg`,
   description:
     'Tekirdağ Süleymanpaşa’da krediye uygun, düşük saatli ve yüksek model 2. el traktörler ile tarım ekipmanları sunan yerel galeri.',
+  category: ['Agricultural equipment supplier', 'Tractor dealer'],
   telephone: CONTACTS.hasan.tel,
   priceRange: '₺₺₺',
+  openingHours: 'Mo-Sa 09:00-19:00',
   address: {
     '@type': 'PostalAddress',
     streetAddress: `${ADDRESS.line1}, ${ADDRESS.line2}`,
@@ -122,7 +124,6 @@ export const localBusinessJsonLd = {
     'yüksek model traktör',
     'tarım ekipmanları',
   ],
-  sameAs: [MAPS_LINK],
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': SITE_URL,

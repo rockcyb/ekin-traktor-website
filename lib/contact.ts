@@ -17,7 +17,7 @@ export const ADDRESS = {
   line1: 'Beşikçi Sokak, Karadeniz Mahallesi',
   line2: 'Trabzon Caddesi, Traktörcüler Sitesi No:35/5',
   line3: '59200 Süleymanpaşa / Tekirdağ',
-  full: 'Beşikçi Sokak, Karadeniz Mahallesi Trabzon Caddesi, Traktörcüler Sitesi No:35/5, 59200 Süleymanpaşa/Tekirdağ',
+  full: 'Beşikçi Sokak, Karadeniz Mahallesi, Trabzon Caddesi, Traktörcüler Sitesi No:35/5, 59200 Süleymanpaşa / Tekirdağ',
 }
 
 export const MAPS_DESTINATION =

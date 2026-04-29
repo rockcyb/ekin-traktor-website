@@ -185,10 +185,10 @@ export default function Home() {
                 Kısa ve net
               </div>
               <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[#203024] sm:text-4xl">
-                Aradığınız traktörü lafı uzatmadan bulalım
+                İhtiyacınıza uygun traktörü birlikte bulalım
               </h2>
               <p className="mt-3 text-base leading-relaxed text-[#5b6554]">
-                Bizde odak ürün, fiyat ve doğru yönlendirmedir. Karmaşık değil, anlaşılır bir satış süreci sunuyoruz.
+                Traktör, ekipman, kredi ve takas seçeneklerinde size sade ve güvenilir şekilde yardımcı oluyoruz.
               </p>
             </div>
           </FadeIn>
@@ -282,8 +282,7 @@ export default function Home() {
                     Sade, şeffaf ve güvenilir traktör satışı
                   </h2>
                   <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-[#5b6554] sm:text-base">
-                    Ekin Traktör&apos;de amaç uzun uzun anlatmak değil; aracı net bilgilerle, doğru fiyatla ve güvenle sunmaktır.
-                  </p>
+                    Ekin Traktör&apos;de her aracı açık bilgilerle, doğru fiyat anlayışıyla ve güvenle sunmaya özen gösteriyoruz.                  </p>
 
                   <div className="mt-6 grid gap-3 sm:grid-cols-2">
                     {TRUST_POINTS.map((item) => (

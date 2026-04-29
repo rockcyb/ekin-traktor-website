@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { Menu, X, Phone, MapPin } from 'lucide-react'
 import { Logo } from './logo'
 import { WhatsappIcon } from './whatsapp-icon'
-import { CONTACTS } from '@/lib/contact'
+import { CONTACT_LIST, CONTACTS } from '@/lib/contact'
 
 const NAV = [
   { href: '/', label: 'Ana Sayfa' },
@@ -108,22 +108,17 @@ export function SiteHeader() {
             )
           })}
           <div className="mt-2 flex flex-col gap-2">
-            <a
-              href={CONTACTS.hasan.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3f5d33] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#304829]"
-            >
-              <WhatsappIcon className="h-4 w-4" /> Hasan Özlü - {CONTACTS.hasan.phoneDisplay}
-            </a>
-            <a
-              href={CONTACTS.burhan.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3f5d33] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#304829]"
-            >
-              <WhatsappIcon className="h-4 w-4" /> Burhan Göçmen - {CONTACTS.burhan.phoneDisplay}
-            </a>
+            {CONTACT_LIST.map((contact) => (
+              <a
+                key={contact.key}
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3f5d33] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#304829]"
+              >
+                <WhatsappIcon className="h-4 w-4" /> {contact.name} - {contact.phoneDisplay}
+              </a>
+            ))}
             <a
               href={`tel:${CONTACTS.hasan.tel}`}
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#dfd6c4] bg-white px-4 py-2.5 text-sm font-semibold text-[#203024] hover:bg-[#f4efe3]"

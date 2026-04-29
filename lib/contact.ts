@@ -13,6 +13,12 @@ export const CONTACTS = {
   },
 } as const
 
+export const CONTACT_ORDER = ['burhan', 'hasan'] as const
+export const CONTACT_LIST = CONTACT_ORDER.map((key) => ({
+  key,
+  ...CONTACTS[key],
+}))
+
 export const ADDRESS = {
   line1: 'Beşikçi Sokak, Karadeniz Mahallesi',
   line2: 'Trabzon Caddesi, Traktörcüler Sitesi No:35/5',

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { User, Mail, Phone as PhoneIcon, MessageSquare, Send } from 'lucide-react'
-import { CONTACTS } from '@/lib/contact'
+import { CONTACTS, CONTACT_ORDER } from '@/lib/contact'
 import { WhatsappIcon } from './whatsapp-icon'
 
 type FormState = {
@@ -21,7 +21,7 @@ const INITIAL: FormState = {
   email: '',
   subject: '',
   message: '',
-  contact: 'hasan',
+  contact: 'burhan',
 }
 
 export function ContactForm() {
@@ -162,7 +162,7 @@ export function ContactForm() {
         <div className="sm:col-span-2">
           <label className="mb-2 block text-sm font-medium text-gray-800">Kime iletilsin?</label>
           <div className="grid gap-3 sm:grid-cols-2">
-            {(['hasan', 'burhan'] as const).map((key) => {
+            {CONTACT_ORDER.map((key) => {
               const c = key === 'burhan' ? CONTACTS.burhan : CONTACTS.hasan
               const active = form.contact === key
               return (

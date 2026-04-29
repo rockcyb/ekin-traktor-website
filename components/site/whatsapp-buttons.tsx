@@ -1,4 +1,4 @@
-import { CONTACTS } from '@/lib/contact'
+import { CONTACT_LIST } from '@/lib/contact'
 import { WhatsappIcon } from './whatsapp-icon'
 
 interface Props {
@@ -35,34 +35,23 @@ export function WhatsappButtons({
 
   return (
     <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
-      <a
-        href={buildHref(CONTACTS.hasan.whatsapp, message)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${base} ${variantCls}`}
-      >
-        <WhatsappIcon className="h-5 w-5" />
-        <span className="flex flex-col items-start leading-tight">
-          <span>Hasan Özlü</span>
-          {showPhone ? (
-            <span className="font-mono text-[11px] opacity-80">{CONTACTS.hasan.phoneDisplay}</span>
-          ) : null}
-        </span>
-      </a>
-      <a
-        href={buildHref(CONTACTS.burhan.whatsapp, message)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${base} ${variantCls}`}
-      >
-        <WhatsappIcon className="h-5 w-5" />
-        <span className="flex flex-col items-start leading-tight">
-          <span>Burhan Göçmen</span>
-          {showPhone ? (
-            <span className="font-mono text-[11px] opacity-80">{CONTACTS.burhan.phoneDisplay}</span>
-          ) : null}
-        </span>
-      </a>
+      {CONTACT_LIST.map((contact) => (
+        <a
+          key={contact.key}
+          href={buildHref(contact.whatsapp, message)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${base} ${variantCls}`}
+        >
+          <WhatsappIcon className="h-5 w-5" />
+          <span className="flex flex-col items-start leading-tight">
+            <span>{contact.name}</span>
+            {showPhone ? (
+              <span className="font-mono text-[11px] opacity-80">{contact.phoneDisplay}</span>
+            ) : null}
+          </span>
+        </a>
+      ))}
     </div>
   )
 }

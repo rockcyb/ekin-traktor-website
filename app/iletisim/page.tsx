@@ -4,7 +4,7 @@ import { PageHero } from '@/components/site/page-hero'
 import { ContactForm } from '@/components/site/contact-form'
 import { WhatsappIcon } from '@/components/site/whatsapp-icon'
 import { FadeIn } from '@/components/ui/animate'
-import { CONTACTS, ADDRESS, WORKING_HOURS, MAPS_EMBED_URL, MAPS_LINK } from '@/lib/contact'
+import { CONTACT_LIST, CONTACTS, ADDRESS, WORKING_HOURS, MAPS_EMBED_URL, MAPS_LINK } from '@/lib/contact'
 import Link from 'next/link'
 import { createPageMetadata } from '@/lib/seo'
 
@@ -30,7 +30,7 @@ export default function IletisimPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 py-14">
           <div className="grid gap-5 md:grid-cols-2">
-            {[CONTACTS.hasan, CONTACTS.burhan].map((c, i) => (
+            {CONTACT_LIST.map((c, i) => (
               <FadeIn key={c.tel} delay={i * 0.1}>
                 <div className="group relative overflow-hidden rounded-2xl bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.05)] ring-1 ring-gray-100 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(16,185,129,0.15)] hover:ring-emerald-200">
                   <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg">

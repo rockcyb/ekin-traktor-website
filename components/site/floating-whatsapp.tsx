@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { CONTACTS } from '@/lib/contact'
+import { CONTACT_LIST } from '@/lib/contact'
 import { WhatsappIcon } from './whatsapp-icon'
 import { X } from 'lucide-react'
 
@@ -33,34 +33,23 @@ export function FloatingWhatsApp() {
             </button>
           </div>
           <div className="divide-y divide-gray-100">
-            <a
-              href={CONTACTS.hasan.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-emerald-50"
-            >
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                <WhatsappIcon className="h-4 w-4" />
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900">{CONTACTS.hasan.name}</div>
-                <div className="font-mono text-xs text-gray-500">{CONTACTS.hasan.phoneDisplay}</div>
-              </div>
-            </a>
-            <a
-              href={CONTACTS.burhan.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-emerald-50"
-            >
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                <WhatsappIcon className="h-4 w-4" />
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900">{CONTACTS.burhan.name}</div>
-                <div className="font-mono text-xs text-gray-500">{CONTACTS.burhan.phoneDisplay}</div>
-              </div>
-            </a>
+            {CONTACT_LIST.map((contact) => (
+              <a
+                key={contact.key}
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-emerald-50"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                  <WhatsappIcon className="h-4 w-4" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">{contact.name}</div>
+                  <div className="font-mono text-xs text-gray-500">{contact.phoneDisplay}</div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       )}

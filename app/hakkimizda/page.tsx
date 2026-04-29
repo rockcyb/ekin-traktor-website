@@ -65,11 +65,11 @@ export default function HakkimizdaPage() {
                   Kısaca biz
                 </div>
                 <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[#203024] sm:text-4xl">
-                  Uzun metin değil, güven veren satış
+                  Sade ve güvenilir satış anlayışı
                 </h2>
                 <div className="mt-4 space-y-4 text-base leading-relaxed text-[#5b6554]">
                   <p>
-                    Ekin Traktör, Traktörcüler Sitesi içinde çiftçinin ihtiyacına uygun traktörü ve ekipmanı daha kolay bulması için çalışan yerel bir galeridir.
+                    Ekin Traktör, çiftçinin ihtiyacına uygun traktörü ve ekipmanı daha kolay bulması için çalışan yerel bir galeridir.
                   </p>
                   <p>
                     Bizim için önemli olan doğru aracı dürüstçe göstermek, kredi ve takas sürecinde yardımcı olmak ve müşteriyi yormadan sonuca ulaştırmaktır.

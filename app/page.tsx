@@ -109,7 +109,14 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={0.08}>
               <h1 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Krediye uygun, düşük saatli ve yüksek model traktörler
+                Krediye uygun, düşük saatli ve{' '}
+                <Link
+                  href="/traktorler"
+                  className="inline-block underline decoration-white/55 decoration-[0.08em] underline-offset-[0.14em] transition hover:text-[#f4f0df] hover:decoration-white"
+                  aria-label="Yüksek model traktörler stok sayfasına git"
+                >
+                  yüksek model traktörler
+                </Link>
               </h1>
             </FadeIn>
             <FadeIn delay={0.16}>

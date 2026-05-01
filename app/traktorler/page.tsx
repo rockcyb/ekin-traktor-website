@@ -5,6 +5,7 @@ import { ArrowUpRight, BadgeCheck, CalendarDays, Clock3, MapPin, Tractor } from 
 import { PageHero } from '@/components/site/page-hero'
 import { WhatsappButtons } from '@/components/site/whatsapp-buttons'
 import { FadeIn } from '@/components/ui/animate'
+import { CONTACTS } from '@/lib/contact'
 import { TRACTOR_LISTINGS } from '@/lib/listings'
 import { createPageMetadata } from '@/lib/seo'
 
@@ -139,16 +140,34 @@ export default function TraktorlerPage() {
                       </div>
                     </div>
 
-                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                      <Link
-                        href={listing.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-xl bg-[#3f5d33] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#304829]"
-                      >
-                        İlanı Gör
-                        <ArrowUpRight className="h-4 w-4" />
-                      </Link>
+                    <div className="mt-6 flex flex-col gap-3">
+                      <div>
+                        <Link
+                          href={listing.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-xl bg-[#3f5d33] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#304829]"
+                        >
+                          İlanı Gör
+                          <ArrowUpRight className="h-4 w-4" />
+                        </Link>
+                        <div className="mt-2 text-xs leading-relaxed text-[#6a705f]">
+                          <div className="font-medium text-[#4f5848]">{CONTACTS.burhan.name}</div>
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                            <a href={`tel:${CONTACTS.burhan.tel}`} className="transition hover:text-[#304829]">
+                              {CONTACTS.burhan.phoneDisplay}
+                            </a>
+                            <a
+                              href={CONTACTS.burhan.whatsapp}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-medium text-[#3f5d33] transition hover:text-[#304829]"
+                            >
+                              WhatsApp
+                            </a>
+                          </div>
+                        </div>
+                      </div>
                       <div className="inline-flex items-center gap-2 text-sm text-[#6a705f]">
                         <Tractor className="h-4 w-4 text-[#4a693b]" />
                         Kaynak: {listing.source}

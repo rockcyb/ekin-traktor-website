@@ -41,7 +41,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6">
-        <Logo tone="dark" />
+        <Logo tone="dark" showTextOnMobile size={42} className="min-w-0 gap-2.5" />
         <nav className="hidden lg:flex items-center gap-1" aria-label="Ana navigasyon">
           {NAV.map((item) => {
             const active = pathname === item.href
